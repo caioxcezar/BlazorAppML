@@ -1,0 +1,39 @@
+﻿@page "/yelpreview"
+
+<PageTitle>Yelp Review</PageTitle>
+<div class="container text-center">
+    <h1>Yelp Review</h1>
+
+    <input type="text" @bind-value="review" />
+    <button class="btn btn-primary" @onclick="Predict">Predict</button>
+    @if (currentPrediction != null)
+    {
+        <p>
+            Prediction:
+            @if (currentPrediction == true)
+            {
+                <span class="emotion">😀</span>
+            }
+            else
+            {
+                <span class="emotion">😡</span>
+            }
+            (@precision% of certainty)
+        </p>
+    }
+</div>
+@code {
+    private bool? currentPrediction = null;
+    private string review = "";
+    private float precision = 0;
+    private void Predict()
+    {
+        LibML.SentimentModel.ModelInput sampleData = new LibML.SentimentModel.ModelInput()
+            {
+                Col0 = review,
+            };
+        var model = LibML.SentimentModel.Predict(sampleData);
+        currentPrediction = model.PredictedLabel == 1;
+        precision = (currentPrediction == true ? model.Score[1] : model.Score[0]) * 100;
+    }
+}

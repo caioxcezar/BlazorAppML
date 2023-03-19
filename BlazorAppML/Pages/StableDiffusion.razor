@@ -1,0 +1,57 @@
+﻿@page "/stablediffusion"
+@using SixLabors.ImageSharp;
+@using SixLabors.ImageSharp.Formats;
+@using SixLabors.ImageSharp.Formats.Png;
+
+<PageTitle>Stable Diffusion</PageTitle>
+<div class="container text-center">
+    <div>
+        <h1>Stable Diffusion</h1>
+    </div>
+    <div>
+        <input type="text" @bind-value="prompt" />
+        <button class="btn btn-primary" @onclick="Generate" disabled=@(prompt.Length < 10 || status == "running")>Generate</button>
+    </div>
+
+    @if (image != null)
+    {
+        <div>
+            <img src="@image" />
+        </div>
+    }
+    @if (status == "running")
+    {
+        <div>
+            <span class="oi oi-loop-circular loading" aria-hidden="true"></span>
+        </div>
+    }
+    @if (status == "failed")
+    {
+        <div>Unable to generate image</div>
+    }
+</div>
+@code {
+    private string? image;
+    private string prompt = "";
+    private bool isError = false;
+    private string status = "completed";
+
+    private void Generate()
+    {
+        if (status == "running") return;
+        status = "running";
+        image = null;
+        Task.Factory.StartNew(() =>
+        {
+            var img = LibStableDiffusion.StableDiffusion.GenerateImage(new LibStableDiffusion.Prompt
+                {
+                    Text = prompt
+                });
+            if (img == null) status = "failed";
+            else image = img.ToBase64String(PngFormat.Instance);
+            status = "completed";
+            InvokeAsync(StateHasChanged);
+        });
+
+    }
+}

@@ -1,0 +1,14 @@
+﻿.loading {
+    animation: loader 5s linear infinite;
+    font-size: 72px;
+}
+
+@keyframes loader {
+    0% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}

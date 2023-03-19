@@ -1,0 +1,7 @@
+{
+  "SafetyChecker": "C:\\Users\\caioc\\source\\repos\\stable-diffusion-v1-5\\safety_checker\\model.onnx",
+  "TextEncoder": "C:\\Users\\caioc\\source\\repos\\stable-diffusion-v1-5\\text_encoder\\model.onnx",
+  "Unet": "C:\\Users\\caioc\\source\\repos\\stable-diffusion-v1-5\\unet\\model.onnx",
+  "VaeDecoder": "C:\\Users\\caioc\\source\\repos\\stable-diffusion-v1-5\\vae_decoder\\model.onnx",
+  "Provider": "CPU"
+}
