@@ -7,4 +7,7 @@ And I used the code from [this github repo](https://github.com/cassiebreviu/Stab
 Some links for future reference:  
 [ML.NET](https://dotnet.microsoft.com/en-us/apps/machinelearning-ai/ml-dotnet)
 [Stable Diffusion with Diffusers](https://huggingface.co/blog/stable_diffusion)
-[Generate images with AI using Stable Diffusion, C#, and ONNX Runtime](https://devblogs.microsoft.com/dotnet/generate-ai-images-stable-diffusion-csharp-onnx-runtime/)
+[Generate images with AI using Stable Diffusion, C#, and ONNX Runtime](https://devblogs.microsoft.com/dotnet/generate-ai-images-stable-diffusion-csharp-onnx-runtime/)  
+
+![Yelp Review Page](https://github.com/caioxcezar/BlazorAppML/tree/master/Screenshot/Yelp.png)  
+![Stable Diffusion Page](https://github.com/caioxcezar/BlazorAppML/tree/master/Screenshot/StableDiffusion.png)  
