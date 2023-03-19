@@ -9,5 +9,5 @@ Some links for future reference:
 [Stable Diffusion with Diffusers](https://huggingface.co/blog/stable_diffusion)
 [Generate images with AI using Stable Diffusion, C#, and ONNX Runtime](https://devblogs.microsoft.com/dotnet/generate-ai-images-stable-diffusion-csharp-onnx-runtime/)  
 
-![Yelp Review Page](https://github.com/caioxcezar/BlazorAppML/tree/master/Screenshot/Yelp.png)  
-![Stable Diffusion Page](https://github.com/caioxcezar/BlazorAppML/tree/master/Screenshot/StableDiffusion.png)  
+![Yelp Review Page](https://github.com/caioxcezar/BlazorAppML/blob/master/Screenshot/Yelp.png?raw=true)  
+![Stable Diffusion Page](https://github.com/caioxcezar/BlazorAppML/blob/master/Screenshot/StableDiffusion.png?raw=true)  
